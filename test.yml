@@ -1,0 +1,13 @@
+---
+- hosts: sw1
+  become: yes
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: centos
+  tasks:
+    - name: Apache 最新版をインストール
+      yum:
+        name: httpd
+        state: latest
+
